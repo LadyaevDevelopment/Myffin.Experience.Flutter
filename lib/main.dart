@@ -33,7 +33,8 @@ class MyffinApp extends StatelessWidget {
             textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           )),
           textTheme: const TextTheme(
-            bodySmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: ColorResources.secondaryText),
+            bodySmall:
+                TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: ColorResources.secondaryText, height: 1.5),
             bodyMedium: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: ColorResources.secondaryText),
             bodyLarge: TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: ColorResources.secondaryText),
           )),

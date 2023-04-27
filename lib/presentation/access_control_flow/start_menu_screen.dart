@@ -28,15 +28,15 @@ class StartMenuScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const Expanded(
-                      child: SizedBox(height: 20),
+                      child: SizedBox(height: Margins.medium),
                     ),
                     SvgPicture.asset(ImageResources.appLogo),
                     const Expanded(
-                      child: SizedBox(height: 20),
+                      child: SizedBox(height: Margins.medium),
                     ),
                     Text(
                       StringResources.startMenuPolicy,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 20.0 / 14),
+                      style: Theme.of(context).textTheme.bodySmall,
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: Margins.medium),
