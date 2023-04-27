@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:myffin_experience_flutter/helpers/color_resources.dart';
 import 'package:myffin_experience_flutter/presentation/access_control_flow/start_menu_screen.dart';
 
@@ -12,11 +13,17 @@ class MyffinApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: 'Inter',
+          appBarTheme: const AppBarTheme(
+            elevation: 0,
+            systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarBrightness: Brightness.light,
+                statusBarIconBrightness: Brightness.dark,
+                statusBarColor: ColorResources.white),
+          ),
           textButtonTheme: TextButtonThemeData(
               style: TextButton.styleFrom(
             padding: const EdgeInsets.all(18),

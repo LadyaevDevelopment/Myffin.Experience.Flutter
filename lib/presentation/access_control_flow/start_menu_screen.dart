@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myffin_experience_flutter/helpers/color_resources.dart';
 import 'package:myffin_experience_flutter/margins.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myffin_experience_flutter/helpers/image_resources.dart';
@@ -11,11 +12,15 @@ class StartMenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
       body: SafeArea(
           child: LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
           child: Container(
+              color: ColorResources.white,
               padding: const EdgeInsets.symmetric(vertical: Margins.medium, horizontal: Margins.large),
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: IntrinsicHeight(
