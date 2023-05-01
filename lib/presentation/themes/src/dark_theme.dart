@@ -12,7 +12,7 @@ ThemeData createDarkTheme() {
         elevation: 0),
     fontFamily: fontFamily,
     elevatedButtonTheme: createElevatedButtonTheme(),
-    textTheme: createTextTheme(AppColors.secondaryText),
+    textTheme: createTextTheme(AppColors.textBody),
     // textTheme: createTextTheme(),
     // scaffoldBackgroundColor: AppColors.lightGrey,
     extensions: <ThemeExtension<dynamic>>[

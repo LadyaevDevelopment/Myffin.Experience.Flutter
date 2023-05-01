@@ -5,7 +5,7 @@ class Styles {
   static ButtonStyle secondaryTextButton() {
     return TextButton.styleFrom(
       backgroundColor: AppColors.lightGrey,
-      foregroundColor: AppColors.primaryText,
+      foregroundColor: AppColors.black,
     );
   }
 

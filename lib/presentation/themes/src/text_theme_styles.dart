@@ -55,52 +55,52 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     );
   }
 
-  static get light => ThemeTextStyles(
-        appTitle: headline1.copyWith(
-          color: AppColors.lightGrey,
-          fontWeight: FontWeight.w700,
-        ),
-        appDescription: headline3.copyWith(
-          color: AppColors.lightGrey,
-          fontWeight: FontWeight.w500,
-        ),
-        labelStyle: headline1.copyWith(
-          fontWeight: FontWeight.w500,
-        ),
-        searchHint: headline1.copyWith(
-          color: AppColors.white,
-          fontSize: 18,
-        ),
-        searchInput: headline1.copyWith(
-          fontSize: 18,
-        ),
-        settingsDialogLanguage: headline2.copyWith(
-          color: AppColors.lightGrey,
-        ),
-      );
+  // static get light => ThemeTextStyles(
+  //       appTitle: headline1.copyWith(
+  //         color: AppColors.lightGrey,
+  //         fontWeight: FontWeight.w700,
+  //       ),
+  //       appDescription: headline3.copyWith(
+  //         color: AppColors.lightGrey,
+  //         fontWeight: FontWeight.w500,
+  //       ),
+  //       labelStyle: headline1.copyWith(
+  //         fontWeight: FontWeight.w500,
+  //       ),
+  //       searchHint: headline1.copyWith(
+  //         color: AppColors.white,
+  //         fontSize: 18,
+  //       ),
+  //       searchInput: headline1.copyWith(
+  //         fontSize: 18,
+  //       ),
+  //       settingsDialogLanguage: headline2.copyWith(
+  //         color: AppColors.lightGrey,
+  //       ),
+  //     );
 
-  static get dark => ThemeTextStyles(
-        appTitle: headline1.copyWith(
-          color: AppColors.lightGrey,
-          fontWeight: FontWeight.w700,
-        ),
-        appDescription: headline3.copyWith(
-          color: AppColors.lightGrey,
-          fontWeight: FontWeight.w500,
-        ),
-        labelStyle: headline1.copyWith(
-          fontWeight: FontWeight.w500,
-        ),
-        searchHint: headline1.copyWith(
-          color: AppColors.lightGrey,
-          fontSize: 18,
-        ),
-        searchInput: headline1.copyWith(
-          fontSize: 18,
-          color: AppColors.lightGrey,
-        ),
-        settingsDialogLanguage: headline2.copyWith(
-          color: AppColors.lightGrey,
-        ),
-      );
+  // static get dark => ThemeTextStyles(
+  //       appTitle: headline1.copyWith(
+  //         color: AppColors.lightGrey,
+  //         fontWeight: FontWeight.w700,
+  //       ),
+  //       appDescription: headline3.copyWith(
+  //         color: AppColors.lightGrey,
+  //         fontWeight: FontWeight.w500,
+  //       ),
+  //       labelStyle: headline1.copyWith(
+  //         fontWeight: FontWeight.w500,
+  //       ),
+  //       searchHint: headline1.copyWith(
+  //         color: AppColors.lightGrey,
+  //         fontSize: 18,
+  //       ),
+  //       searchInput: headline1.copyWith(
+  //         fontSize: 18,
+  //         color: AppColors.lightGrey,
+  //       ),
+  //       settingsDialogLanguage: headline2.copyWith(
+  //         color: AppColors.lightGrey,
+  //       ),
+  //     );
 }

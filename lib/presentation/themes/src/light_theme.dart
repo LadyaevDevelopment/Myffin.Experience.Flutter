@@ -12,7 +12,7 @@ ThemeData createLightTheme() {
         elevation: 0),
     fontFamily: fontFamily,
     elevatedButtonTheme: createElevatedButtonTheme(),
-    textTheme: createTextTheme(AppColors.secondaryText),
+    textTheme: createTextTheme(AppColors.textBody),
     // scaffoldBackgroundColor: AppColors.white,
     extensions: <ThemeExtension<dynamic>>[
       AndroidSystemNavbar.light
