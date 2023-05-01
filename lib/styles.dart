@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:myffin_experience_flutter/helpers/color_resources.dart';
+import 'package:myffin_experience_flutter/presentation/themes/theme.dart';
 
 class Styles {
   static ButtonStyle secondaryTextButton() {
     return TextButton.styleFrom(
-      backgroundColor: ColorResources.lightGrey,
-      foregroundColor: ColorResources.primaryText,
+      backgroundColor: AppColors.lightGrey,
+      foregroundColor: AppColors.primaryText,
     );
   }
 
   static ButtonStyle primaryTextButton() {
     return TextButton.styleFrom(
-      backgroundColor: ColorResources.blue,
-      foregroundColor: ColorResources.white,
+      backgroundColor: AppColors.blue,
+      foregroundColor: AppColors.white,
     );
   }
 }

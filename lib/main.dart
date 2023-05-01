@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myffin_experience_flutter/helpers/color_resources.dart';
+import 'package:myffin_experience_flutter/extensions/theme_data_extensions.dart';
 import 'package:myffin_experience_flutter/presentation/access_control_flow/start_menu_screen.dart';
+import 'package:myffin_experience_flutter/presentation/themes/theme.dart';
+import 'package:theme_manager/theme_manager.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyffinApp());
 }
 
@@ -12,33 +15,23 @@ class MyffinApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          fontFamily: 'Inter',
-          appBarTheme: const AppBarTheme(
-            elevation: 0,
-            systemOverlayStyle: SystemUiOverlayStyle(
-                statusBarBrightness: Brightness.light,
-                statusBarIconBrightness: Brightness.dark,
-                statusBarColor: ColorResources.white),
-          ),
-          textButtonTheme: TextButtonThemeData(
-              style: TextButton.styleFrom(
-            padding: const EdgeInsets.all(18),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-            textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-          )),
-          textTheme: const TextTheme(
-            bodySmall:
-                TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: ColorResources.secondaryText, height: 1.5),
-            bodyMedium: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, color: ColorResources.secondaryText),
-            bodyLarge: TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: ColorResources.secondaryText),
-          )),
-      home: const StartMenuScreen(),
+    return ThemeManager(
+      defaultBrightnessPreference: BrightnessPreference.system,
+      data: (Brightness brightness) {
+        final theme = brightness == Brightness.light ? createLightTheme() : createDarkTheme();
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+            systemNavigationBarColor: theme.androidSystemNavbar.backgroundColor,
+            systemNavigationBarIconBrightness: theme.androidSystemNavbar.iconBrightness));
+        return theme;
+      },
+      loadBrightnessOnStart: true,
+      themedWidgetBuilder: (BuildContext context, ThemeData theme) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: theme,
+          home: const StartMenuScreen(),
+        );
+      },
     );
   }
 }
