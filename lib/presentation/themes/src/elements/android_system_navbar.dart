@@ -1,4 +1,4 @@
-part of '../theme.dart';
+part of '../../theme.dart';
 
 class AndroidSystemNavbar extends ThemeExtension<AndroidSystemNavbar> {
   final Color backgroundColor;
