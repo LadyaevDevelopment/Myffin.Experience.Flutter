@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myffin_experience_flutter/presentation/themes/theme.dart';
 
 extension BuildContextExtensions on BuildContext {
   // AppLocalizations get localizations => AppLocalizations.of(this)!;
 
-  // ThemeTextStyles get text => Theme.of(this).extension<ThemeTextStyles>()!;
+  ThemeTextStyles get text => Theme.of(this).extension<ThemeTextStyles>()!;
 
   // ThemeColors get color => Theme.of(this).extension<ThemeColors>()!;
 

@@ -41,7 +41,7 @@ class AndroidSystemNavbar extends ThemeExtension<AndroidSystemNavbar> {
       );
 
   static get dark => const AndroidSystemNavbar(
-        backgroundColor: AppColors.lightBlack,
+        backgroundColor: AppColors.black,
         iconBrightness: Brightness.light,
       );
 }

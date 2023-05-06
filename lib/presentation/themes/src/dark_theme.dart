@@ -3,12 +3,12 @@ part of '../theme.dart';
 ThemeData createDarkTheme() {
   return ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: AppColors.lightBlack,
+    scaffoldBackgroundColor: AppColors.black,
     appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: Brightness.light,
             statusBarIconBrightness: Brightness.light,
-            statusBarColor: AppColors.lightBlack),
+            statusBarColor: AppColors.black),
         elevation: 0),
     fontFamily: fontFamily,
     elevatedButtonTheme: createElevatedButtonTheme(),
@@ -16,9 +16,9 @@ ThemeData createDarkTheme() {
     // textTheme: createTextTheme(),
     // scaffoldBackgroundColor: AppColors.lightGrey,
     extensions: <ThemeExtension<dynamic>>[
-      AndroidSystemNavbar.dark
+      AndroidSystemNavbar.dark,
       // ThemeColors.light,
-      // ThemeTextStyles.light,
+      ThemeTextStyles.light,
     ],
     // appBarTheme: AppBarTheme(
     //   color: AppColors.lightGrey,
