@@ -16,9 +16,8 @@ ThemeData createDarkTheme() {
     // textTheme: createTextTheme(),
     // scaffoldBackgroundColor: AppColors.lightGrey,
     extensions: <ThemeExtension<dynamic>>[
-      AndroidSystemNavbar.dark,
-      // ThemeColors.light,
-      ThemeTextStyles.light,
+      ColorThemeExtension.dark,
+      TextThemeExtension.dark,
     ],
     // appBarTheme: AppBarTheme(
     //   color: AppColors.lightGrey,

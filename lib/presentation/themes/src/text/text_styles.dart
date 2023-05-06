@@ -1,4 +1,4 @@
-part of '../../../theme.dart';
+part of '../../theme.dart';
 
 const TextStyle bodySmall = TextStyle(fontWeight: FontWeight.w500, fontSize: 14, height: 1.5);
 const TextStyle bodyMedium = TextStyle(fontWeight: FontWeight.w500, fontSize: 16);

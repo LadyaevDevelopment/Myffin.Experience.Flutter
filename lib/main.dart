@@ -20,8 +20,8 @@ class MyffinApp extends StatelessWidget {
       data: (Brightness brightness) {
         final theme = brightness == Brightness.light ? createLightTheme() : createDarkTheme();
         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-            systemNavigationBarColor: theme.androidSystemNavbar.backgroundColor,
-            systemNavigationBarIconBrightness: theme.androidSystemNavbar.iconBrightness));
+            systemNavigationBarColor: theme.colors.systemNavbarBackgroundColor,
+            systemNavigationBarIconBrightness: theme.colors.systemNavbarIconBrightness));
         return theme;
       },
       loadBrightnessOnStart: true,

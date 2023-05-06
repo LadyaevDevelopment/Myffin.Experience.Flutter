@@ -1,6 +1,6 @@
-part of '../../../theme.dart';
+part of '../../theme.dart';
 
-class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
+class TextThemeExtension extends ThemeExtension<TextThemeExtension> {
   final TextStyle externalLink;
   // final TextStyle appTitle;
   // final TextStyle appDescription;
@@ -9,7 +9,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
   // final TextStyle searchInput;
   // final TextStyle settingsDialogLanguage;
 
-  ThemeTextStyles({required this.externalLink
+  TextThemeExtension({required this.externalLink
       // required this.appTitle,
       // required this.appDescription,
       // required this.labelStyle,
@@ -19,7 +19,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       });
 
   @override
-  ThemeExtension<ThemeTextStyles> copyWith({TextStyle? externalLink
+  ThemeExtension<TextThemeExtension> copyWith({TextStyle? externalLink
       // TextStyle? appBarTitle,
       // TextStyle? appTitle,
       // TextStyle? appDescription,
@@ -27,7 +27,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
       // TextStyle? searchHint,
       // TextStyle? searchInput,
       }) {
-    return ThemeTextStyles(externalLink: externalLink ?? this.externalLink
+    return TextThemeExtension(externalLink: externalLink ?? this.externalLink
         // appTitle: appTitle ?? this.appTitle,
         // appDescription: appDescription ?? this.appDescription,
         // labelStyle: labelStyle ?? this.labelStyle,
@@ -38,15 +38,15 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
   }
 
   @override
-  ThemeExtension<ThemeTextStyles> lerp(
-    ThemeExtension<ThemeTextStyles>? other,
+  ThemeExtension<TextThemeExtension> lerp(
+    ThemeExtension<TextThemeExtension>? other,
     double t,
   ) {
-    if (other is! ThemeTextStyles) {
+    if (other is! TextThemeExtension) {
       return this;
     }
 
-    return ThemeTextStyles(
+    return TextThemeExtension(
       externalLink: TextStyle.lerp(externalLink, other.externalLink, t)!,
       // appTitle: TextStyle.lerp(appTitle, other.appTitle, t)!,
       // appDescription: TextStyle.lerp(appDescription, other.appDescription, t)!,
@@ -57,7 +57,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
     );
   }
 
-  static get light => ThemeTextStyles(
+  static get light => TextThemeExtension(
         externalLink: createLinkStyle(),
         // appTitle: headline1.copyWith(
         //   color: AppColors.lightGrey,
@@ -82,7 +82,7 @@ class ThemeTextStyles extends ThemeExtension<ThemeTextStyles> {
         // ),
       );
 
-  static get dark => ThemeTextStyles(
+  static get dark => TextThemeExtension(
         externalLink: createLinkStyle(),
         // appTitle: headline1.copyWith(
         //   color: AppColors.lightGrey,

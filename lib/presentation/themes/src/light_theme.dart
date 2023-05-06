@@ -15,9 +15,8 @@ ThemeData createLightTheme() {
     textTheme: createTextTheme(AppColors.textBody),
     // scaffoldBackgroundColor: AppColors.white,
     extensions: <ThemeExtension<dynamic>>[
-      AndroidSystemNavbar.light,
-      // ThemeColors.light,
-      ThemeTextStyles.light,
+      ColorThemeExtension.light,
+      TextThemeExtension.light,
     ],
     // appBarTheme: AppBarTheme(
     //   color: AppColors.white,
