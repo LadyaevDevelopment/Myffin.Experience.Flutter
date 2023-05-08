@@ -3,20 +3,20 @@
 
 import "package:sal/src/enums/operation_status.dart";
 
-class ResponseWrapper<T> {
+class ResponseWrapper<TData> {
   OperationStatus operationStatus;
 
-  T? responseData;
+  TData? responseData;
 
   ResponseWrapper({required this.operationStatus, this.responseData});
 
-  factory ResponseWrapper.fromJson(dynamic json, T Function(Object? json) fromJsonT) => ResponseWrapper<T>(
+  factory ResponseWrapper.fromJson(dynamic json, TData Function(Object? json) fromJsonTData) => ResponseWrapper<TData>(
       operationStatus: OperationStatusExtensions.fromString(json['operationStatus']),
-      responseData: fromJsonT(json['responseData']),
+      responseData: fromJsonTData(json['responseData']),
 	);
   
-  Map<String, dynamic> toJson(Object? Function(T value) toJsonT) => <String, dynamic>{
+  Map<String, dynamic> toJson(Object? Function(TData value) toJsonTData) => <String, dynamic>{
 	  'operationStatus': operationStatus.stringValue,
-	  'responseData': (responseData == null) ? null : toJsonT(responseData!),
+	  'responseData': (responseData == null) ? null : toJsonTData(responseData!),
 	};
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myffin_experience_flutter/extensions/theme_data_extensions.dart';
+import 'package:myffin_experience_flutter/extensions/theme_data.dart';
 import 'package:myffin_experience_flutter/presentation/access_control_flow/start_menu_screen.dart';
 import 'package:myffin_experience_flutter/presentation/themes/theme.dart';
 import 'package:theme_manager/theme_manager.dart';
