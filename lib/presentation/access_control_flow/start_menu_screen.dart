@@ -56,7 +56,7 @@ class _StartMenuScreenState extends State<StartMenuScreen> {
                         textAlign: TextAlign.center,
                         text: TextSpan(children: [
                           TextSpan(
-                              text: StringResources.startMenuPolicyStartText,
+                              text: "${StringResources.startMenuPolicyStartText}\n",
                               style: Theme.of(context).textTheme.bodySmall),
                           ...documents
                               .mapIndexed((item, index) => [
