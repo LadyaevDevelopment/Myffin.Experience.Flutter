@@ -1,0 +1,9 @@
+class HttpRequestException implements Exception {
+  String url;
+  int statusCode;
+  String? response;
+  HttpRequestException(this.url, this.statusCode, this.response);
+
+  @override
+  String toString() => "Request to address \"$url\" completed with status code $statusCode";
+}
