@@ -21,6 +21,6 @@ void _initRepositoryDependencies() {
   _locator.registerLazySingleton<MiscRepository>(() => MiscRemoteRepository());
 }
 
-T resolveDependency<T>() {
+T resolveDependency<T extends Object>() {
   return _locator<T>();
 }
