@@ -2,5 +2,6 @@
     "startMenuPolicyStartText": "By tapping Sign Up, you agree to our",
     "and": "and",
     "startMenuLoginBtn": "log in",
-    "startMenuRegisterBtn": "sign up"
+    "startMenuRegisterBtn": "sign up",
+    "startMenuPolicyDocumentsError": "We were unable to load policy documents"
 }

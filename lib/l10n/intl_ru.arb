@@ -2,5 +2,6 @@
     "startMenuPolicyStartText": "Нажав Зарегистрироваться, вы соглашаетесь с нашими",
     "and": "и",
     "startMenuLoginBtn": "войти",
-    "startMenuRegisterBtn": "зарегистрироваться"
+    "startMenuRegisterBtn": "зарегистрироваться",
+    "startMenuPolicyDocumentsError": "Нам не удалось загрузить пользовательское соглашение"
 }

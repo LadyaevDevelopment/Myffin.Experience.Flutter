@@ -15,3 +15,7 @@ TextTheme createTextTheme(Color bodyTextColor) {
 TextStyle createLinkStyle() {
   return bodySmall.copyWith(color: AppColors.blue);
 }
+
+TextStyle createErrorLabelStyle() {
+  return bodySmall.copyWith(color: AppColors.red);
+}

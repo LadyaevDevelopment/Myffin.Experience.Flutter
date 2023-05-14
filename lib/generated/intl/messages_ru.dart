@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "and": MessageLookupByLibrary.simpleMessage("и"),
         "startMenuLoginBtn": MessageLookupByLibrary.simpleMessage("войти"),
+        "startMenuPolicyDocumentsError": MessageLookupByLibrary.simpleMessage(
+            "Нам не удалось загрузить пользовательское соглашение"),
         "startMenuPolicyStartText": MessageLookupByLibrary.simpleMessage(
             "Нажав Зарегистрироваться, вы соглашаетесь с нашими"),
         "startMenuRegisterBtn":

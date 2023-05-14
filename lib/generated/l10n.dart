@@ -89,6 +89,16 @@ class S {
       args: [],
     );
   }
+
+  /// `We were unable to load policy documents`
+  String get startMenuPolicyDocumentsError {
+    return Intl.message(
+      'We were unable to load policy documents',
+      name: 'startMenuPolicyDocumentsError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
