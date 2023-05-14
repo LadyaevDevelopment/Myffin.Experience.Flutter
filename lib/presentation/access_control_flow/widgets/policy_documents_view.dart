@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
-import 'package:myffin_experience_flutter/domain/access_control/policy_document.dart';
+import 'package:myffin_experience_flutter/domain/entities/access_control/policy_document.dart';
 import 'package:myffin_experience_flutter/extensions/iterable.dart';
 
 class PolicyDocumentsView extends StatelessWidget {

@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:myffin_experience_flutter/domain/access_control/policy_document.dart';
-import 'package:sal/sal.dart';
+import 'package:myffin_experience_flutter/domain/entities/access_control/policy_document.dart';
+import 'package:myffin_experience_flutter/domain/use_cases/get_policy_documents_use_case.dart';
 
 part 'start_menu_event.dart';
 part 'start_menu_state.dart';
 
 class StartMenuBloc extends Bloc<StartMenuEvent, StartMenuState> {
+  final _getPolicyDocumentsUseCase = GetPolicyDocumentsUseCase();
+
   StartMenuBloc() : super(StartMenuInitial()) {
     on<StartMenuEvent>((event, emit) async {
       if (event is StartMenuGetPolicyDocuments) {
@@ -17,14 +19,12 @@ class StartMenuBloc extends Bloc<StartMenuEvent, StartMenuState> {
 
   Future _getPolicyDocuments(Emitter<StartMenuState> emit) async {
     emit.call(StartMenuProgress());
-    final result =
-        await MiscApiNetworkClient(const ApiNetworkClientDefaultConfiguration("http://192.168.1.148/myffin.api/v1"))
-            .getPolicyDocuments(accessToken: "");
-    if (result.operationStatus == OperationStatus.success) {
+    final result = await _getPolicyDocumentsUseCase.getPolicyDocuments();
+    if (result.success != null) {
       final documents =
-          result.responseData!.documents.map((item) => PolicyDocument(title: item.title, url: item.url)).toList();
+          result.success!.documents.map((item) => PolicyDocument(title: item.title, url: item.url)).toList();
       emit.call(StartMenuDocuments(documents: documents));
-    } else {
+    } else if (result.commonError != null) {
       emit.call(StartMenuError());
     }
   }
