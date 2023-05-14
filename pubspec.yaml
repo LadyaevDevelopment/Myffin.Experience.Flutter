@@ -13,11 +13,14 @@ dependencies:
     sdk: flutter
   sal:
     path: packages/sal
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
   theme_manager: ^1.1.1
   url_launcher: ^6.1.10
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -33,23 +36,25 @@ flutter:
     - assets/images/
 
   fonts:
-  - family: Inter
-    fonts:
-      - asset: assets/fonts/Inter-Thin.ttf
-        weight: 100
-      - asset: assets/fonts/Inter-ExtraLight.ttf
-        weight: 200
-      - asset: assets/fonts/Inter-Light.ttf
-        weight: 300
-      - asset: assets/fonts/Inter-Regular.ttf
-        weight: 400
-      - asset: assets/fonts/Inter-Medium.ttf
-        weight: 500
-      - asset: assets/fonts/Inter-SemiBold.ttf
-        weight: 600
-      - asset: assets/fonts/Inter-Bold.ttf
-        weight: 700
-      - asset: assets/fonts/Inter-ExtraBold.ttf
-        weight: 800
-      - asset: assets/fonts/Inter-Black.ttf
-        weight: 900
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Inter-Black.ttf
+          weight: 900
+flutter_intl:
+  enabled: true

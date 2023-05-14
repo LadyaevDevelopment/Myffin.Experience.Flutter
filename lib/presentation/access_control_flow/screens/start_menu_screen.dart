@@ -1,10 +1,10 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:myffin_experience_flutter/extensions/build_context.dart';
+import 'package:myffin_experience_flutter/domain/access_control/policy_document.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:myffin_experience_flutter/extensions/iterable.dart';
+import 'package:myffin_experience_flutter/extensions/build_context.dart';
+import 'package:myffin_experience_flutter/generated/l10n.dart';
 import 'package:myffin_experience_flutter/helpers/image_resources.dart';
-import 'package:myffin_experience_flutter/helpers/string_resources.dart';
+import 'package:myffin_experience_flutter/presentation/access_control_flow/widgets/policy_documents_view.dart';
 import 'package:myffin_experience_flutter/presentation/themes/theme.dart';
 import 'package:myffin_experience_flutter/presentation/themes/theme_management.dart';
 import 'package:sal/sal.dart';
@@ -30,6 +30,7 @@ class _StartMenuScreenState extends State<StartMenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final localizationsDelegate = S.of(context);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
@@ -52,37 +53,23 @@ class _StartMenuScreenState extends State<StartMenuScreen> {
                     const Expanded(
                       child: SizedBox(height: Margins.medium),
                     ),
-                    RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(children: [
-                          TextSpan(
-                              text: "${StringResources.startMenuPolicyStartText}\n",
-                              style: Theme.of(context).textTheme.bodySmall),
-                          ...documents
-                              .mapIndexed((item, index) => [
-                                    TextSpan(
-                                      text: item.title,
-                                      style: context.text.externalLink,
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          await launchUrl(Uri.parse(item.url));
-                                        },
-                                    ),
-                                    if (index < documents.length - 2)
-                                      TextSpan(text: ", ", style: Theme.of(context).textTheme.bodySmall),
-                                    if (index == documents.length - 2)
-                                      TextSpan(
-                                          text: " ${StringResources.and} ",
-                                          style: Theme.of(context).textTheme.bodySmall),
-                                    if (index == documents.length - 1)
-                                      TextSpan(text: ".", style: Theme.of(context).textTheme.bodySmall),
-                                  ])
-                              .expand((element) => element)
-                        ])),
+                    PolicyDocumentsView(
+                      arguments: PolicyLinksViewArguments(
+                          documents: documents,
+                          startText: "${localizationsDelegate.startMenuPolicyStartText}\n",
+                          endText: ".",
+                          splitter: ", ",
+                          specialLastSplitter: " ${localizationsDelegate.and} ",
+                          onDocumentTapped: (document) async {
+                            await launchUrl(Uri.parse(document.url));
+                          }),
+                      textStyle: Theme.of(context).textTheme.bodySmall,
+                      linkStyle: context.text.externalLink,
+                    ),
                     const SizedBox(height: Margins.medium),
                     ElevatedButton(
                       style: primaryTextButton(),
-                      child: const Text(StringResources.startMenuLoginBtn),
+                      child: Text(localizationsDelegate.startMenuLoginBtn),
                       onPressed: () {
                         setDarkTheme(context);
                       },
@@ -90,7 +77,7 @@ class _StartMenuScreenState extends State<StartMenuScreen> {
                     const SizedBox(height: Margins.small),
                     ElevatedButton(
                       style: secondaryTextButton(),
-                      child: const Text(StringResources.startMenuRegisterBtn),
+                      child: Text(localizationsDelegate.startMenuRegisterBtn),
                       onPressed: () {
                         setLightTheme(context);
                       },
@@ -109,7 +96,8 @@ class _StartMenuScreenState extends State<StartMenuScreen> {
             .getPolicyDocuments(accessToken: "");
     if (result.operationStatus == OperationStatus.success) {
       setState(() {
-        documents = result.responseData!.documents;
+        documents =
+            result.responseData!.documents.map((item) => PolicyDocument(title: item.title, url: item.url)).toList();
       });
     }
   }

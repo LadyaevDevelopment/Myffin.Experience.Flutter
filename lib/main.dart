@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart';
 import 'package:myffin_experience_flutter/extensions/theme_data.dart';
-import 'package:myffin_experience_flutter/presentation/access_control_flow/start_menu_screen.dart';
+import 'package:myffin_experience_flutter/generated/l10n.dart';
+import 'package:myffin_experience_flutter/presentation/access_control_flow/screens/start_menu_screen.dart';
 import 'package:myffin_experience_flutter/presentation/themes/theme.dart';
 import 'package:theme_manager/theme_manager.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Intl.defaultLocale = 'en';
   runApp(const MyffinApp());
 }
 
@@ -30,6 +34,13 @@ class MyffinApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: theme,
           home: const StartMenuScreen(),
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate
+          ],
+          supportedLocales: S.delegate.supportedLocales,
         );
       },
     );

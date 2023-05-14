@@ -4,6 +4,6 @@ export "src/api_clients/network/api_network_client_default_configuration.dart";
 export "src/api_clients/network/misc_api_network_client.dart";
 export "src/api_clients/network/other/http_request_exception.dart";
 export "src/enums/operation_status.dart";
-export "src/models/policy_document.dart";
+export "src/models/policy_document_model.dart";
 export "src/responses/misc/get_policy_documents_response.dart";
 export "src/responses/response_wrapper.dart";
